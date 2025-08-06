@@ -41,11 +41,12 @@ document.addEventListener("DOMContentLoaded", function () {
         return Math.pow(num1, num2);
     }
 
-    function sqrt(value: string | number): number | string {
+    function sqrt(value: string | number, root: string| number): number | string {
         const num = toNumber(value);
-        if (num === null) return "Tham số không hợp lệ!";
+        const hat= toNumber(root);
+        if (num === null || hat === null) return "Tham số không hợp lệ!";
         if (num < 0) return "Không thể tính căn bậc hai của số âm!";
-        return Math.sqrt(num);
+        return Math.pow(num, 1/hat);
     }
 
     function factorial(value: string | number): number | string {
@@ -79,7 +80,7 @@ document.addEventListener("DOMContentLoaded", function () {
         resultElement.textContent = `Kết quả: ${power(number1.value, number2.value)}`;
     });
     document.getElementById("sqrt")?.addEventListener("click", () => {
-        resultElement.textContent = `Kết quả: ${sqrt(number1.value)}`;
+        resultElement.textContent = `Kết quả: ${sqrt(number1.value, number2.value)}`;
     });
     document.getElementById("factorial")?.addEventListener("click", () => {
         resultElement.textContent = `Kết quả: ${factorial(number1.value)}`;

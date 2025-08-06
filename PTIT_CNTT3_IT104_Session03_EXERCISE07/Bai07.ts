@@ -11,8 +11,8 @@ function removeDuplicateChars(input: string): string {
     return result;
 }
 
-let input1 = "banana";
-let input2 = "hello world";
+let input1: string = "banana";
+let input2: string = "hello world";
 
 console.log(removeDuplicateChars(input1));  
 console.log(removeDuplicateChars(input2)); 
